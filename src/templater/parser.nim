@@ -16,6 +16,19 @@ type
     variables: TableRef[string, Variable]
     index: int
 
+## Returns a list of validation issues, to output to the user
+proc validate(templ: static string): seq[string] =
+  echo "Validating template"
+  result = newSeq[string]()
+
+  let
+    forLoops = templ.findAll(forLoopPattern)
+    endFors = templ.findAll(endForPattern)
+
+  if forLoops.len != endFors.len:
+    result.add("No. of ForLoops not equivalent to No. of EndFors")
+    result.add("No. of ForLoops not equivalent to No. of EndFors")
+
 func newParser*(templ: static string; variables: TableRef[string, Variable]): Parser {.raises: [ValidationError].} =
   ## Creates a new parser, and validates the template on build
   ## 
@@ -29,19 +42,6 @@ func newParser*(templ: static string; variables: TableRef[string, Variable]): Pa
     raise ValidationError.newException(errors.join(",\n"))
 
   Parser(templ: templ, index: 0, variables: variables)
-
-## Returns a list of validation issues, to output to the user
-proc validate(templ: static string): seq[string] =
-  echo "Validating template"
-  result = newSeq[string]()
-
-  let
-    forLoops = templ.findAll(forLoopPattern)
-    endFors = templ.findAll(endForPattern)
-
-  if forLoops.len != endFors.len:
-    result.add("No. of ForLoops not equivalent to No. of EndFors")
-    result.add("No. of ForLoops not equivalent to No. of EndFors")
 
 proc parse*(p: var Parser): string =
   ##
