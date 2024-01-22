@@ -79,17 +79,11 @@ proc insertForLoops(p: var Parser): void {.raises: [ValidationError, VariableErr
   for match in matches:
     let endMatch = p.getForLoopEnd(match)
 
-    var
-      hasIndex = false
-      indexName: string
-
-    if match.groupsCount == 3:
-      hasIndex = true
-      indexName = p.output[match.group(2)]
-
-    let
+    let 
       iterationName = p.output[match.group(0)]
       iterationValue = p.output[match.group(1)]
+      indexName = p.output[match.group(2)]
+      hasIndex = indexName != ""
 
     if not p.variables.hasKey(iterationValue):
       raise VariableError.newException("Variable " & iterationValue & " not found")
@@ -151,8 +145,8 @@ when isMainModule:
     <p>{{ myValue }}</p>
 
     <ul>
-      {{#for item in items | index}}
-      <li>{{#index}}: <p>{{#item}}</p></li>
+      {{#for item in items|index}}
+      <li><p>{{#index}}: {{#item}}</p></li>
       {{#endfor}}
     </ul>
   """, t)
