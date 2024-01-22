@@ -20,4 +20,5 @@ task docs, "Docs":
   exec "nim doc --project -o:./docs ./src/templater.nim"
 
 task test, "Run all Tests":
-  exec "testament p tests/test_*.nim"
+  exec "testament all" 
+  exec "testament html"
