@@ -47,7 +47,7 @@ Lists:
         </li>
 
         <li>
-            {{#for item in items | index}}
+            {{#for item in items | index}} <!--index here is optional, and can be named anything-->
             <li>{{#index}}: {{#item}}</li>
             {{#endfor}}
         </li>
