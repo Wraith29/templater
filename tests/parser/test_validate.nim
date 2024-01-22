@@ -6,7 +6,7 @@ import tables
 import ../../src/templater
 
 const
-  validTemplate = """
+  invalidTemplate = """
   <!DOCTYPE html>
   <html>
     <head>
@@ -17,11 +17,13 @@ const
   
     <body>
       {{#for item in items}}
+      {{#for item2 in items}}
       <p>{{item}}</p>
       {{#endfor}}
     </body>
   </html>
   """
 
-doAssertRaises(ValidationError):
-  discard newParser(validTemplate, newTable[string, Variable]())
+block invalidTemplate_raisesValidationError:
+  doAssertRaises(ValidationError):
+    discard newParser(invalidTemplate, newTable[string, Variable]())

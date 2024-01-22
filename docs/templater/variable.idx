@@ -1,6 +1,9 @@
 nimTitle	variable	templater/variable.html	module src/templater/variable		0
-nim	Variable	templater/variable.html#Variable	type Variable		5
-nim	newVariable	templater/variable.html#newVariable.t,int	template newVariable(i: int): void		11
-nim	newVariable	templater/variable.html#newVariable.t,string	template newVariable(s: string): void		12
-nim	newVariable	templater/variable.html#newVariable.t,seq[Variable]	template newVariable(arr: seq[Variable]): void		13
-nimgrp	newvariable	templater/variable.html#newVariable-templates-all	template		11
+nim	Variable	templater/variable.html#Variable	type Variable		7
+nim	`$`	templater/variable.html#$,Variable	proc `$`(v: Variable): string		13
+nim	newVariable	templater/variable.html#newVariable,int	proc newVariable(i: int): Variable		19
+nim	newVariable	templater/variable.html#newVariable,string	proc newVariable(s: string): Variable		22
+nim	newVariable	templater/variable.html#newVariable,seq[Variable]	proc newVariable(arr: seq[Variable]): Variable		25
+nim	isArray	templater/variable.html#isArray.t,Variable	template isArray(v: Variable): bool		28
+nim	items	templater/variable.html#items.i,Variable	iterator items(v: Variable): Variable		30
+nimgrp	newvariable	templater/variable.html#newVariable-procs-all	proc		19

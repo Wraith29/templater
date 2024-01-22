@@ -22,17 +22,29 @@
     <div class="container">
       <h1 class="title">Index</h1>
       Modules: <a href="templater.html">templater</a>, <a href="templater/parser.html">templater/parser</a>, <a href="templater/variable.html">templater/variable</a>.<br/><p /><h2>API symbols</h2>
-<dl><dt><a name="newParser" href="#newParser"><span>newParser:</span></a></dt><dd><ul class="simple">
+<dl><dt><a name="%60%24%60" href="#%60%24%60"><span>`$`:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="variable: proc `$`(v: Variable): string" href="templater/variable.html#%24%2CVariable">variable: proc `$`(v: Variable): string</a></li>
+          </ul></dd>
+<dt><a name="isArray" href="#isArray"><span>isArray:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="variable: template isArray(v: Variable): bool" href="templater/variable.html#isArray.t%2CVariable">variable: template isArray(v: Variable): bool</a></li>
+          </ul></dd>
+<dt><a name="items" href="#items"><span>items:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="variable: iterator items(v: Variable): Variable" href="templater/variable.html#items.i%2CVariable">variable: iterator items(v: Variable): Variable</a></li>
+          </ul></dd>
+<dt><a name="newParser" href="#newParser"><span>newParser:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="parser: proc newParser(templ: static string; variables: TableRef[string, Variable]): Parser" href="templater/parser.html#newParser%2Cstaticstring%2CTableRef%5Bstring%2CVariable%5D">parser: proc newParser(templ: static string; variables: TableRef[string, Variable]): Parser</a></li>
           </ul></dd>
 <dt><a name="newVariable" href="#newVariable"><span>newVariable:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="variable: template newVariable(i: int): void" href="templater/variable.html#newVariable.t%2Cint">variable: template newVariable(i: int): void</a></li>
+          data-doc-search-tag="variable: proc newVariable(i: int): Variable" href="templater/variable.html#newVariable%2Cint">variable: proc newVariable(i: int): Variable</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="variable: template newVariable(arr: seq[Variable]): void" href="templater/variable.html#newVariable.t%2Cseq%5BVariable%5D">variable: template newVariable(arr: seq[Variable]): void</a></li>
+          data-doc-search-tag="variable: proc newVariable(arr: seq[Variable]): Variable" href="templater/variable.html#newVariable%2Cseq%5BVariable%5D">variable: proc newVariable(arr: seq[Variable]): Variable</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="variable: template newVariable(s: string): void" href="templater/variable.html#newVariable.t%2Cstring">variable: template newVariable(s: string): void</a></li>
+          data-doc-search-tag="variable: proc newVariable(s: string): Variable" href="templater/variable.html#newVariable%2Cstring">variable: proc newVariable(s: string): Variable</a></li>
           </ul></dd>
 <dt><a name="parse" href="#parse"><span>parse:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -50,11 +62,15 @@
 <li><a class="reference external"
           data-doc-search-tag="variable: type Variable" href="templater/variable.html#Variable">variable: type Variable</a></li>
           </ul></dd>
+<dt><a name="VariableError" href="#VariableError"><span>VariableError:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="parser: object VariableError" href="templater/parser.html#VariableError">parser: object VariableError</a></li>
+          </ul></dd>
 </dl>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2024-01-22 14:03:52 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2024-01-22 23:22:02 UTC</small>
       </div>
     </div>
   </div>
