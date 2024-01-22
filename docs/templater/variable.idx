@@ -1,0 +1,6 @@
+nimTitle	variable	templater/variable.html	module src/templater/variable		0
+nim	Variable	templater/variable.html#Variable	type Variable		5
+nim	newVariable	templater/variable.html#newVariable.t,int	template newVariable(i: int): void		11
+nim	newVariable	templater/variable.html#newVariable.t,string	template newVariable(s: string): void		12
+nim	newVariable	templater/variable.html#newVariable.t,seq[Variable]	template newVariable(arr: seq[Variable]): void		13
+nimgrp	newvariable	templater/variable.html#newVariable-templates-all	template		11
