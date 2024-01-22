@@ -1,0 +1,7 @@
+/.deps/
+/packages/
+
+*.exe
+/**/*.exe/
+
+/nimcache/
