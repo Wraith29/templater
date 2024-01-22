@@ -6,3 +6,6 @@
 
 /nimcache/
 /testresults/
+testresults.html
+megatest.*
+outputGotten.txt
