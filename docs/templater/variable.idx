@@ -1,9 +1,11 @@
 nimTitle	variable	templater/variable.html	module src/templater/variable		0
-nim	Variable	templater/variable.html#Variable	type Variable		7
-nim	`$`	templater/variable.html#$,Variable	proc `$`(v: Variable): string		13
-nim	newVariable	templater/variable.html#newVariable,int	proc newVariable(i: int): Variable		19
-nim	newVariable	templater/variable.html#newVariable,string	proc newVariable(s: string): Variable		22
-nim	newVariable	templater/variable.html#newVariable,seq[Variable]	proc newVariable(arr: seq[Variable]): Variable		25
-nim	isArray	templater/variable.html#isArray.t,Variable	template isArray(v: Variable): bool		28
-nim	items	templater/variable.html#items.i,Variable	iterator items(v: Variable): Variable		30
-nimgrp	newvariable	templater/variable.html#newVariable-procs-all	proc		19
+nim	Variable	templater/variable.html#Variable	type Variable		8
+nim	VarTable	templater/variable.html#VarTable	type VarTable		14
+nim	newVarTable	templater/variable.html#newVarTable,varargs[]	proc newVarTable(vars: varargs[(string, Variable)]): VarTable		16
+nim	`$`	templater/variable.html#$,Variable	proc `$`(v: Variable): string		19
+nim	newVariable	templater/variable.html#newVariable,int	proc newVariable(i: int): Variable		25
+nim	newVariable	templater/variable.html#newVariable,string	proc newVariable(s: string): Variable		28
+nim	newVariable	templater/variable.html#newVariable,seq[Variable]	proc newVariable(arr: seq[Variable]): Variable		31
+nim	isArray	templater/variable.html#isArray.t,Variable	template isArray(v: Variable): bool		34
+nim	items	templater/variable.html#items.i,Variable	iterator items(v: Variable): Variable		36
+nimgrp	newvariable	templater/variable.html#newVariable-procs-all	proc		25

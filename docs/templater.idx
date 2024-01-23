@@ -1,1 +1,2 @@
 nimTitle	templater	templater.html	module src/templater		0
+nim	loadTemplate	templater.html#loadTemplate,staticstring,VarTable	proc loadTemplate(templateName: static string; variables: VarTable): string		5
