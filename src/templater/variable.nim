@@ -14,7 +14,7 @@ func `$`*(v: Variable): string {.raises: [].} =
   return case v.kind:
     of vkInt: $v.intVal
     of vkStr: $v.strVal
-    of vkArr: v.arrVal.join(",")
+    of vkArr: v.arrVal.join(", ")
 
 func newVariable*(i: int): Variable {.raises: [].} =
   Variable(kind: vkInt, intVal: i)
