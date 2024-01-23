@@ -1,4 +1,5 @@
 import strutils
+import tables
 
 type
   VariableKind = enum
@@ -9,6 +10,11 @@ type
     of vkInt: intVal: int
     of vkStr: strVal: string
     of vkArr: arrVal: seq[Variable]
+
+  VarTable* = TableRef[string, Variable]
+
+proc newVarTable*(vars: varargs[(string, Variable)]): VarTable = 
+  newTable[string, Variable](vars)
 
 func `$`*(v: Variable): string {.raises: [].} =
   return case v.kind:
