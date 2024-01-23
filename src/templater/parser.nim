@@ -132,23 +132,3 @@ proc parse*(p: var Parser): string {.raises: [ValidationError, VariableError, re
   p.insertForLoops()
 
   return p.output
-
-when isMainModule:
-  let t = newTable[string, Variable]([
-    ("pageTitle", newVariable("Test Title")),
-    ("myValue", newVariable(123)),
-    ("items", newVariable(@[newVariable("One of my items"), newVariable("Another item")]))
-  ])
-
-  var p = newParser("""
-    <h1>{{ pageTitle }}</h1>
-    <p>{{ myValue }}</p>
-
-    <ul>
-      {{#for item in items|index}}
-      <li><p>{{#index}}: {{#item}}</p></li>
-      {{#endfor}}
-    </ul>
-  """, t)
-  
-  echo p.parse()
