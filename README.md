@@ -6,6 +6,21 @@ Performs Compile-time template validation, to ensure you don't get any nasty sur
 
 [Docs](https://Wraith29.github.io/templater/templater.html)
 
+## Installation
+
+Global Installation:
+
+```sh
+nimble install templater
+```
+
+Local Installation:
+
+```sh
+atlas init
+atlas use templater
+```
+
 ## Usage
 
 ### Load from Template String
