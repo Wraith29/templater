@@ -1,16 +1,43 @@
 # Templater
 
-A Nim-based HTML templating engine
+A Nim-based HTML templating engine.
 
-## How to use
+Performs Compile-time template validation, to ensure you don't get any nasty surprises when running your code.
+
+## Usage
+
+### Load from Template String
 
 ```nim
 import templater
 
-let variables = newTable[string, Variable]([("pageTitle", newVariable("Page Title"))])
-var p = newParser(staticRead "myTemplate.html", variables)
+const myTemplate = """
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{pageTitle}}</title>
+    </head>
 
-let content = p.parse()
+    <body>
+        <h1>{{myHeader}}</h1>
+        <ul>{{#for item in items | index}}
+            <li>{{#index}}: {{#item}}</li>
+        {{#endfor}}</ul>
+    </body>
+</html>
+"""
+
+let vars = newVarTable(("pageTitle", newVariable("My Page Title")), ("myHeader", newVariable("Page Header")), ("items", newVariable(@[newVariable("Item 0"), newVariable("Item 1")])))
+
+let renderedTemplate = loadTemplate(myTemplate, vars)
+```
+
+### Load from a Template file
+
+```nim
+let vars = newVarTable(("pageTitle", newVariable("My Page Title")), ("myHeader", newVariable("Page Header")), ("items", newVariable(@[newVariable("Item 0"), newVariable("Item 1")])))
+
+let renderedTemplate = loadTemplateFile(staticRead("template.html"), vars)
 ```
 
 ## Template Syntax
