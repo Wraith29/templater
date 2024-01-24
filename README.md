@@ -4,7 +4,7 @@ A Nim-based HTML templating engine.
 
 Performs Compile-time template validation, to ensure you don't get any nasty surprises when running your code.
 
-[Docs](https://Wraith29.github.io/templater.html)
+[Docs](https://Wraith29.github.io/templater/templater.html)
 
 ## Usage
 
