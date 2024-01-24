@@ -55,7 +55,11 @@
     <summary><a class="reference reference-toplevel" href="#12" id="62">Procs</a></summary>
     <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">loadTemplate
-  <li><a class="reference" href="#loadTemplate%2Cstaticstring%2CVarTable" title="loadTemplate(templateName: static string; variables: VarTable): string">loadTemplate(templateName: static string; variables: VarTable): string</a></li>
+  <li><a class="reference" href="#loadTemplate%2Cstaticstring%2CVarTable" title="loadTemplate(templ: static string; vars: VarTable): string">loadTemplate(templ: static string; vars: VarTable): string</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">loadTemplateFile
+  <li><a class="reference" href="#loadTemplateFile%2Cstaticstring%2CVarTable" title="loadTemplateFile(fileName: static string; vars: VarTable): string">loadTemplateFile(fileName: static string; vars: VarTable): string</a></li>
 
 </ul>
 
@@ -82,7 +86,19 @@
   <dl class="item">
     <div id="loadTemplate-procs-all">
   <div id="loadTemplate,staticstring,VarTable">
-  <dt><pre><span class="Keyword">proc</span> <a href="#loadTemplate%2Cstaticstring%2CVarTable"><span class="Identifier">loadTemplate</span></a><span class="Other">(</span><span class="Identifier">templateName</span><span class="Other">:</span> <span class="Identifier">static</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">variables</span><span class="Other">:</span> <a href="templater/variable.html#VarTable"><span class="Identifier">VarTable</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#loadTemplate%2Cstaticstring%2CVarTable"><span class="Identifier">loadTemplate</span></a><span class="Other">(</span><span class="Identifier">templ</span><span class="Other">:</span> <span class="Identifier">static</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">vars</span><span class="Other">:</span> <a href="templater/variable.html#VarTable"><span class="Identifier">VarTable</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="templater/parser.html#ValidationError"><span class="Identifier">ValidationError</span></a><span class="Other">,</span> <a href="templater/parser.html#VariableError"><span class="Identifier">VariableError</span></a><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">RegexError</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="loadTemplateFile-procs-all">
+  <div id="loadTemplateFile,staticstring,VarTable">
+  <dt><pre><span class="Keyword">proc</span> <a href="#loadTemplateFile%2Cstaticstring%2CVarTable"><span class="Identifier">loadTemplateFile</span></a><span class="Other">(</span><span class="Identifier">fileName</span><span class="Other">:</span> <span class="Identifier">static</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">vars</span><span class="Other">:</span> <a href="templater/variable.html#VarTable"><span class="Identifier">VarTable</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="templater/parser.html#ValidationError"><span class="Identifier">ValidationError</span></a><span class="Other">,</span> <a href="templater/parser.html#VariableError"><span class="Identifier">VariableError</span></a><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">RegexError</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -102,7 +118,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2024-01-23 17:29:49 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2024-01-24 10:40:27 UTC</small>
       </div>
     </div>
   </div>
