@@ -1,6 +1,6 @@
 # Templater
 
-A Nim-based HTML templating engine.
+A Nim-based HTML templating engine inspired by Python's [Jinja](https://jinja.palletsprojects.com/en/3.1.x/).
 
 Performs Compile-time template validation, to ensure you don't get any nasty surprises when running your code.
 

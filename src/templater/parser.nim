@@ -1,9 +1,5 @@
-import algorithm
+import std/[algorithm, enumerate, strutils, sugar, tables]
 import regex
-import std/enumerate
-import strutils
-import sugar
-import tables
 import variable
 
 const

@@ -13,9 +13,6 @@ type
 
   VarTable* = TableRef[string, Variable]
 
-proc newVarTable*(vars: varargs[(string, Variable)]): VarTable = 
-  newTable[string, Variable](vars)
-
 func `$`*(v: Variable): string {.raises: [].} =
   return case v.kind:
     of vkInt: $v.intVal
@@ -31,10 +28,12 @@ func newVariable*(s: string): Variable {.raises: [].} =
 func newVariable*(arr: seq[Variable]): Variable {.raises: [].} =
   Variable(kind: vkArr, arrVal: arr)
 
+proc newVarTable*(vars: varargs[(string, Variable)]): VarTable = 
+  newTable[string, Variable](vars)
+
 template isArray*(v: Variable): bool = v.kind == vkArr
 
 iterator items*(v: Variable): Variable =
   assert v.isArray
-  
   for item in v.arrVal:
     yield item
