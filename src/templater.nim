@@ -10,4 +10,4 @@ proc loadTemplateFile*(fileName: static string; vars: VarTable): string {.raises
   const templ = staticRead(fileName)
   return loadTemplate(templ, vars)
 
-export variable
+export variable, parser
