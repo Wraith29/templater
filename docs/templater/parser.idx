@@ -1,6 +1,0 @@
-nimTitle	parser	templater/parser.html	module src/templater/parser		0
-nim	ValidationError	templater/parser.html#ValidationError	object ValidationError		20
-nim	VariableError	templater/parser.html#VariableError	object VariableError		21
-nim	Parser	templater/parser.html#Parser	type Parser		23
-nim	newParser	templater/parser.html#newParser,staticstring,TableRef[string,Variable]	proc newParser(templ: static string; variables: TableRef[string, Variable]): Parser		40
-nim	parse	templater/parser.html#parse,Parser	proc parse(p: var Parser): string		130

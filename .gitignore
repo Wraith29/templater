@@ -9,3 +9,5 @@
 testresults.html
 megatest.*
 outputGotten.txt
+test_*
+!test_*.nim
