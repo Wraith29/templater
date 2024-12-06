@@ -1,4 +1,4 @@
-import std/[algorithm, enumerate, strutils, sugar, tables]
+import std/[algorithm, enumerate, strformat, strutils, sugar, tables]
 import regex
 import variable
 
@@ -69,10 +69,9 @@ proc getForLoopEnd(p: Parser; m: RegexMatch2): RegexMatch2 {.raises: [Validation
     raise ValidationError.newException("Unable to find end for loop")
 
 proc insertForLoops(p: var Parser): void {.raises: [ValidationError, VariableError, ref KeyError, RegexError].} =
-  let matches = p.output.findAll(forLoopPattern)
+  var match = RegexMatch2()
 
-  # for each for loop
-  for match in matches:
+  while p.output.find(forLoopPattern, match, match.boundaries.b):
     let endMatch = p.getForLoopEnd(match)
 
     let 
@@ -82,12 +81,12 @@ proc insertForLoops(p: var Parser): void {.raises: [ValidationError, VariableErr
       hasIndex = indexName != ""
 
     if not p.variables.hasKey(iterationValue):
-      raise VariableError.newException("Variable " & iterationValue & " not found")
+      raise VariableError.newException(fmt"Variable {iterationValue} not found")
 
     let values = p.variables[iterationValue]
 
     if not values.isArray:
-      raise VariableError.newException("Variable " & iterationValue & " cannot be iterated")
+      raise VariableError.newException(fmt"Variable {iterationValue} cannot be iterated")
 
     let htmlBetween = p.output[match.boundaries.b+1 .. endMatch.boundaries.a-1]
 
@@ -103,7 +102,7 @@ proc insertForLoops(p: var Parser): void {.raises: [ValidationError, VariableErr
 
       if hasIndex:
         if not map.hasKey(indexName):
-          raise VariableError.newException("Index value " & indexName & " not found")
+          raise VariableError.newException(fmt"Index value {indexName} not found")
       
         var indexMatch: RegexMatch2
         
@@ -115,7 +114,7 @@ proc insertForLoops(p: var Parser): void {.raises: [ValidationError, VariableErr
       var iterMatch: RegexMatch2
 
       if not iteration.find(createLoopVarPattern(iterationName), iterMatch):
-        raise VariableError.newException("Couldn't find place to insert " & iterationName)
+        raise VariableError.newException(fmt"Couldn't find place to insert {iterationName}")
 
       iteration.replace($value, iterMatch.boundaries)
 
