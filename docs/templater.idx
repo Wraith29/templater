@@ -1,3 +1,0 @@
-nimTitle	templater	templater.html	module src/templater		0
-nim	loadTemplate	templater.html#loadTemplate,staticstring,VarTable	proc loadTemplate(templ: static string; vars: VarTable): string		5
-nim	loadTemplateFile	templater.html#loadTemplateFile,staticstring,VarTable	proc loadTemplateFile(fileName: static string; vars: VarTable): string		9
